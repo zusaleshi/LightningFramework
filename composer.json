@@ -1,0 +1,14 @@
+{
+    "name": "neosteam/lightning-framework",
+    "description": "light-weighted PHP framework",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+    	"php": ">=5.5.0"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Lightning\\": "LightningFramework"
+    	}
+    }
+}
