@@ -1,9 +1,0 @@
-<IfModule mod_rewrite.c>
-
-	RewriteRule ^$ index.php?_domain=%{HTTP_HOST}&_url=/ [QSA,PT,L]
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d 
-	RewriteRule ^(.*)$ index.php?_domain=%{HTTP_HOST}&_url=/$1 [QSA,L]
-
-</IfModule>
-Options -Indexes
