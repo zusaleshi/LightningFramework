@@ -12,7 +12,7 @@ class Request extends Core
 		foreach(array('GET' => $_GET, 'POST' => $_POST, 'REQUEST' => $_REQUEST, 'SERVER' => $_SERVER) as $name => $item) {
 			$this->_data[$name] = array();
 			foreach($item as $key => $val) {
-				$this->_data[$name][$key] = $val;
+				//$this->_data[$name][$key] = $val;
 			}
 			unset($item);
 		}

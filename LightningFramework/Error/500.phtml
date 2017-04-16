@@ -1,13 +1,28 @@
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 <style>
-div.body {
-	margin: 3% 5%;
-	padding: 2% 2%;
-	background-color: white;
-	box-shadow: 5px 5px 25px #888888;
+body {
+	margin-top:20px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+table {
+	width: 100%;
+	}
+th {
+	text-align: left;
+}
+th.class {
+	width: 20%;
+}
+th.file {
+	width: 45%;
+}
+th.line {
+	width: 10%;
+}
+th.function {
+	width: 25%;
 }
 </style>
 
@@ -15,7 +30,7 @@ div.body {
 </head>
 <body>
 <div class="body">
-	<div class="alert alert-danger" role="alert"><?php echo $message?></div>
+	<p><?php echo $message?></p>
 	<hr />
 	<?php echo $table ?>
 </div>

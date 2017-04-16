@@ -1,12 +1,14 @@
 <?php
 
-$di = require('../Vendor/LightningFramework/Bootstrap.php');
-$di->set_application_path(dirname(dirname(__FILE__)) . '/Application');
+require('../vendor/autoload.php');
+
 
 try {
 
-	$app = new Lightning\MVC\WebApplication($di);
-	echo $app->handle();
+	$bootstrap = new Lightning\Bootstrap();
+	$di = $bootstrap->build_DI();
+	throw new Exception("Error Processing Request", 1);
+	
 
 } catch(Exception $e) {
 

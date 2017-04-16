@@ -1,4 +1,6 @@
-<?php namespace Lightning\System;
+<?php 
+namespace Lightning\System;
+
 if(! defined('framework_name')) exit('No direct script access allowed');
 
 use Lightning\System\Core;

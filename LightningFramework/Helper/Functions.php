@@ -1,6 +1,6 @@
 <?php if(! defined('framework_name')) exit('No direct script access allowed');
 
-use Lightning\Exception\LFException;
+use Lightning\Exception\LightningException;
 
 function is_closure($obj)
 {
@@ -11,10 +11,10 @@ function config_merge($arr_a, $arr_b)
 {
 	foreach($arr_b as $key => $val) {
 		if(is_array($arr_a[$key])) {
-			if(!is_array($val)) throw new LFException("Error in config_merge(): variable type does not match");
+			if(!is_array($val)) throw new LightningException("Error in config_merge(): variable type does not match");
 			$arr_a[$key] = config_merge($arr[$key], $val);
 		} else {
-			if(is_array($val)) throw new LFException("Error in config_merge(): variable type does not match");
+			if(is_array($val)) throw new LightningException("Error in config_merge(): variable type does not match");
 			$arr_a[$key] = $val;
 		}
 	}
@@ -39,10 +39,10 @@ function show_error($message)
 {
 	$tbody = '';
 	$thead = "<tr>
-				<th>Class</th>
-				<th>File</th>
-				<th>Line</th>
-				<th>Function</th>
+				<th class='class'>Class</th>
+				<th class='file'>File</th>
+				<th class='line'>Line</th>
+				<th class='function'>Function</th>
 			</tr>";
 	foreach(array_reverse(debug_backtrace()) as $error) {
 		$line  = empty($error['line']) 		? '' : $error['line'];
@@ -56,13 +56,17 @@ function show_error($message)
 					<td>{$func}</td>
 				</tr>";
 	}
-	$table = "<table class='table table-hover'>
+	$table = "<table>
 				<thead>{$thead}</thead>
 				<tbody>{$tbody}</tbody>
 			</table>";
 	exit(include(framework_path . '\Error\500.phtml'));
 }
 
+function show_404($message)
+{
+	exit(include(framework_path . '\Error\404.phtml'));
+}
 
 
 function print_pre($mixed)
